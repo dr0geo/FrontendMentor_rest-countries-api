@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;800&display=swap');
+
+.light-app {
+  color: hsl(200, 15%, 8%);
+  font-family: 'Nunito-sans', sans-serif;
+  font-weight: 400;
+}
+
+.dark-app {
+  color: white;
+  font-family: 'Nunito-sans', sans-serif;
+  font-weight: 400;
+}

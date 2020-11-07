@@ -1,0 +1,17 @@
+.light-select {
+  appearance: none;
+  background: url('./down-arrow.svg') no-repeat right 10px center / 20px 20px white;
+  border: none;
+  border-radius: 5px;
+  color: hsl(200, 15%, 8%);
+  padding: 10px 45px 10px 15px;
+}
+
+.dark-select {
+  appearance: none;
+  background: url('./down-arrow.svg') no-repeat right 10px center / 20px 20px hsl(209, 23%, 22%);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 45px 10px 15px;
+}

@@ -1,0 +1,18 @@
+.light-main {
+  background: hsl(0, 0%, 98%);
+  margin: auto;
+  max-width: 1200px;
+  padding: 50px 20px;
+}
+
+.dark-main {
+  background: hsl(207, 26%, 17%);
+  margin: auto;
+  max-width: 1200px;
+  padding: 50px 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+}
