@@ -4,11 +4,11 @@ import { SearchInput } from '../SearchInput/SearchInput';
 import { Selecter } from '../Selecter/Selecter';
 import { CountryCard } from '../CountryCard/CountryCard';
  
-export const MainPage = ({ darkMode, handleChange }) => {
+export const MainPage = ({ darkMode }) => {
   return (
     <div className={darkMode ? 'dark-main' : 'light-main'}>
       <div className="filters">
-        <SearchInput darkMode={darkMode} handleChange={handleChange} />
+        <SearchInput darkMode={darkMode} />
         <Selecter darkMode={darkMode} />
       </div>
       <div>

@@ -9,17 +9,10 @@ export const App = () => {
 
   const handleClick = () => setDarkMode(() => !darkMode);
 
-  const [inputText, setInputText] = useState('');
-
-  const handleChange = ({ target }) => setInputText(target.value);
-
   return (
     <div className={darkMode ? 'dark-app' : 'light-app'}>
       <Header onClick={handleClick} darkMode={darkMode} />
-      <MainPage 
-        darkMode={darkMode} 
-        handleChange={handleChange}
-      />
+      <MainPage darkMode={darkMode} />
     </div>
   );
 }
