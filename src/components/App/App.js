@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from '../Header/Header';
 import { MainPage } from '../MainPage/MainPage';
+import { DetailsPage } from '../DetailsPage/DetailsPage';
 import './App.css';
 
 export const App = () => {
@@ -36,17 +37,34 @@ export const App = () => {
 
   const handleSelect = ({ target }) => setRegionInput(target.value);
 
+  // Use state for displaying details page:
+  const [page, setPage] = useState('');
+
+  const handleDetailsDisplay = ({ target }) => setPage(target.value); 
+
+  const mainPage = (
+    <MainPage 
+      darkMode={darkMode} 
+      countries={countries}
+      handleChange={handleChange}
+      inputText={inputText}
+      handleSelect={handleSelect}
+      regionInput={regionInput}
+      handleDetailsDisplay={handleDetailsDisplay}
+    />
+  );
+
+  const detailsPage = (
+    <DetailsPage
+      countries={countries}
+      page={page}
+    />
+  );
+
   return (
     <div className={darkMode ? 'dark-app' : 'light-app'}>
       <Header onClick={handleClick} darkMode={darkMode} />
-      <MainPage 
-        darkMode={darkMode} 
-        countries={countries}
-        handleChange={handleChange}
-        inputText={inputText}
-        handleSelect={handleSelect}
-        regionInput={regionInput}
-      />
+      {page === '' ? mainPage : detailsPage }
     </div>
   );
 }

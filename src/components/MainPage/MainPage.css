@@ -26,13 +26,13 @@ ul {
   margin: 50px 0px;
 }
 
-li {
+.base-list {
   border-radius: 5px;
   list-style-type: none;
   padding-bottom: 40px;
 }
 
-li:hover {
+.base-list:hover {
   cursor: pointer;
 }
 

@@ -1,0 +1,47 @@
+.details {
+  margin: auto;
+  max-width: 1200px;
+  padding: 50px 20px;
+}
+
+.back-button {
+  background: url('./arrow-back.svg') no-repeat left 30px center / 25px 20px white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px 2px lightgray;
+  padding: 10px 40px 10px 60px;
+}
+
+.back-button:hover {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+.flag {
+  height: 320px;
+  width: 475px;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.list-item {
+  font-size: 0.8em;
+  list-style-type: none;
+}
+
+.country-details {
+  height: 320px;
+}
