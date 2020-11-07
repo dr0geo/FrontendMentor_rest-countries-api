@@ -23,7 +23,5 @@ export const CountryCard = () => {
       }));
   }, []);
 
-  return (
-    <ul>{countries}</ul>
-  );
+  return <ul>{countries}</ul>;
 }
