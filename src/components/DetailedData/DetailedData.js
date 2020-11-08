@@ -31,14 +31,14 @@ export const DetailedData = ({ country, darkMode }) => {
     <Wrapper>
       <Title>{country.name}</Title>
       <GridColCont>
-        <DetailsLi><strong>Native Name:</strong> {country.nativeName}</DetailsLi>
-        <DetailsLi><strong>Population:</strong> {country.population}</DetailsLi>
-        <DetailsLi><strong>Region:</strong> {country.region}</DetailsLi>
-        <DetailsLi><strong>Sub Region:</strong> {country.subregion}</DetailsLi>
-        <DetailsLi><strong>Capital:</strong> {country.capital}</DetailsLi>
-        <DetailsLi><strong>Top Level Domain:</strong> {country.topLevelDomain}</DetailsLi>
-        <DetailsLi><strong>Currencies:</strong> {country.currencies.name}</DetailsLi>
-        <DetailsLi><strong>Languages:</strong> {country.languages.name}</DetailsLi>
+        <DetailsLi><strong>Native Name</strong>: {country.nativeName}</DetailsLi>
+        <DetailsLi><strong>Population</strong>: {country.population}</DetailsLi>
+        <DetailsLi><strong>Region</strong>: {country.region}</DetailsLi>
+        <DetailsLi><strong>Sub Region</strong>: {country.subregion}</DetailsLi>
+        <DetailsLi><strong>Capital</strong>: {country.capital}</DetailsLi>
+        <DetailsLi><strong>Top Level Domain</strong>: {country.topLevelDomain}</DetailsLi>
+        <DetailsLi><strong>Currencies</strong>: {country.currencies.name}</DetailsLi>
+        <DetailsLi><strong>Languages</strong>: {country.languages.name}</DetailsLi>
       </GridColCont>
         <BorderCountries country={country} darkMode={darkMode} />
     </Wrapper>

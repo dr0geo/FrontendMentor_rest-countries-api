@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   background: ${props => props.darkMode ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)'};
   margin: auto;
   max-width: 1200px;
-  padding: 50px 20px;
+  padding: 50px 0px;
   transition: all 0.3s ease-in-out;
 `;
 

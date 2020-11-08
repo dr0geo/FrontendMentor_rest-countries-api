@@ -10,7 +10,6 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   margin: auto;
   max-width: 1200px;
-  padding: 0px 20px;
   transition: all 0.3s ease-in-out;
 `;
 

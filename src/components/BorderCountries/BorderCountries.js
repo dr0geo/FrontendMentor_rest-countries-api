@@ -8,6 +8,9 @@ const BorderCountry = styled.em`
   margin: 0px 10px;
   padding: 5px 15px;
   transition: all 0.3s ease-in-out;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -15,5 +18,5 @@ const Paragraph = styled.p`
 `;
 
 export const BorderCountries = ({ country, darkMode }) => {
-  return <Paragraph><strong>Border Countries:</strong>{country.borders.map(country => <BorderCountry darkMode={darkMode}>{country}</BorderCountry>)}</Paragraph>
+  return <Paragraph><strong>Border Countries</strong>: {country.borders.map(country => <BorderCountry darkMode={darkMode}>{country}</BorderCountry>)}</Paragraph>
 };

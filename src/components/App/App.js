@@ -12,6 +12,18 @@ const Wrapper = styled.div`
   transition: all 0.3s ease-in-out;
 `;
 
+const HeaderContainer = styled.div`
+  background: ${props => props.darkMode ? 'hsl(209, 23%, 22%)' : 'white'};
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+`;
+
+const MainContainer = styled.div`
+  background: ${props => props.darkMode ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)'};
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+`;
+
 export const App = () => {
 
   //Fetch data from API:
@@ -78,8 +90,12 @@ export const App = () => {
 
   return (
     <Wrapper darkMode={darkMode}>
-      <Header onClick={handleClick} darkMode={darkMode} />
-      {page === '' ? mainPage : detailsPage}
+      <HeaderContainer darkMode={darkMode}>
+        <Header onClick={handleClick} darkMode={darkMode} />
+      </HeaderContainer>
+      <MainContainer darkMode={darkMode}>
+        {page === '' ? mainPage : detailsPage}
+      </MainContainer>
     </Wrapper>
   );
 }
