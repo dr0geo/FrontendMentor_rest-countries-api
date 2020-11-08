@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { DetailsPage } from '../DetailsPage/DetailsPage';
 import { Header } from '../Header/Header';
 import { MainPage } from '../MainPage/MainPage';
+import { LoadingPage } from '../LoadingPage/LoadingPage';
 import './App.css';
 
 export const App = () => {
@@ -16,7 +17,8 @@ export const App = () => {
       .then(response => response.json())
       .then(array => array.map(country => {
         return setCountries(prevCountries => [...prevCountries, country]);
-      }));
+      }))
+      .then(() => setIsLoaded(true));
   }, []);
 
   // Use state for light/dark mode:
@@ -34,19 +36,24 @@ export const App = () => {
 
   const handleSelect = ({ target }) => setRegionInput(target.value);
 
+  // Use state for loading screen:
+  const [isLoaded, setIsLoaded] = useState(false);
+
   // Use state for displaying normal or details page:
   const [page, setPage] = useState('');
 
   // Define what to display in the main section:
   const mainPage = (
-    <MainPage 
-      darkMode={darkMode} 
-      countries={countries}
-      handleChange={handleChange}
-      inputText={inputText}
-      handleSelect={handleSelect}
-      regionInput={regionInput}
-    />
+    isLoaded ? 
+      <MainPage 
+        darkMode={darkMode} 
+        countries={countries}
+        handleChange={handleChange}
+        inputText={inputText}
+        handleSelect={handleSelect}
+        regionInput={regionInput}
+      />
+      : <LoadingPage />
   );
 
   const detailsPage = (
