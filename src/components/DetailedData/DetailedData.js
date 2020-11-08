@@ -17,12 +17,6 @@ const DetailsLi = styled.li`
   list-style-type: none;
 `;
 
-const FlexRowCont = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 60px 0px;
-`;
-
 export const DetailedData = ({ country, darkMode }) => {
   return (
     <Wrapper>
@@ -37,9 +31,7 @@ export const DetailedData = ({ country, darkMode }) => {
         <DetailsLi><strong>Currencies:</strong> {country.currencies.name}</DetailsLi>
         <DetailsLi><strong>Languages:</strong> {country.languages.name}</DetailsLi>
       </FlexColCont>
-      <FlexRowCont>
         <BorderCountries country={country} darkMode={darkMode} />
-      </FlexRowCont>
     </Wrapper>
   );
 };
