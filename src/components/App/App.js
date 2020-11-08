@@ -62,7 +62,11 @@ export const App = () => {
   const [page, setPage] = useState('');
 
   const displayDetails = country => setPage(country);
-  const backToMainPage = () => setPage('');
+  const backToMainPage = () => {
+    setPage('');
+    setInputText('');
+    setRegionInput('');
+  };
 
   // Define what to display in the main section:
   const mainPage = (
