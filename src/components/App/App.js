@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import { DetailsPage } from '../DetailsPage/DetailsPage';
 import { Header } from '../Header/Header';
 import { MainPage } from '../MainPage/MainPage';
 import { LoadingPage } from '../LoadingPage/LoadingPage';
-import './App.css';
+
+const Wrapper = styled.div`
+  color: ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
+  font-family: 'Nunito-sans', sans-serif;
+  font-weight: 400;
+`;
 
 export const App = () => {
 
@@ -64,9 +70,9 @@ export const App = () => {
   );
 
   return (
-    <div className={darkMode ? 'dark-app' : 'light-app'}>
+    <Wrapper darkMode={darkMode}>
       <Header onClick={handleClick} darkMode={darkMode} />
       {page === '' ? mainPage : detailsPage}
-    </div>
+    </Wrapper>
   );
 }
