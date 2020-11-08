@@ -15,10 +15,7 @@ export const App = () => {
     fetch(url)
       .then(response => response.json())
       .then(array => array.map(country => {
-        return setCountries(prevCountries => [
-          ...prevCountries,
-          country
-        ]);
+        return setCountries(prevCountries => [...prevCountries, country]);
       }));
   }, []);
 
@@ -40,8 +37,8 @@ export const App = () => {
   // Use state for displaying details page:
   const [page, setPage] = useState('');
 
-  const handleDetailsDisplay = ({ target }) => setPage(target.value); 
-
+  const handleDetailsDisplay = ({ target }) => console.log(target.value);
+  
   const mainPage = (
     <MainPage 
       darkMode={darkMode} 
