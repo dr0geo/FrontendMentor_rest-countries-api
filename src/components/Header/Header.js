@@ -10,12 +10,22 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   margin: auto;
   max-width: 1200px;
+  padding: 0px 40px;
   transition: all 0.3s ease-in-out;
+  @media only screen and (max-width: 400px) {
+    padding: 0px 10px;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 1.7em;
   font-weight: 800;
+  @media only screen and (max-width: 650px) {
+    font-size: 1.2em;
+  }
+  @media only screen and (max-width: 400px) {
+    font-size: 1em;
+  }
 `;
 
 const Button = styled.div`
@@ -24,6 +34,9 @@ const Button = styled.div`
   padding-left: 20px;
   :hover {
     cursor: pointer;
+  }
+  @media only screen and (max-width: 400px) {
+    font-size: 0.80em;
   }
 `;
 

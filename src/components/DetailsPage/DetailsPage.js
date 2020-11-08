@@ -18,6 +18,7 @@ const BackButton = styled.button`
   border-radius: 5px;
   box-shadow: 0px 0px 2px 2px ${props => props.darkMode ? 'hsl(248, 17%, 10%)' : 'lightgray'};
   color: ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
+  margin-left: 40px;
   padding: 10px 40px 10px 60px;
   :hover {
     cursor: pointer;
@@ -29,13 +30,21 @@ const FlexRowCont = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-around;
+  margin-right: 50px;
   padding: 60px 0px;
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const Flag = styled.img`
   display: block;
-  height: 320px;
-  width: 475px;
+  flex: 1 1 200px;
+  margin-left: 40px;
+  @media only screen and (max-width: 800px) {
+    width: 90%;
+    margin-bottom: 50px;
+  }
 `;
 
 export const DetailsPage = ({ countries, darkMode, page, backToMainPage }) => {

@@ -20,6 +20,7 @@ const HeaderContainer = styled.div`
 
 const MainContainer = styled.div`
   background: ${props => props.darkMode ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)'};
+  min-height: 100vh;
   transition: all 0.3s ease-in-out;
   width: 100%;
 `;

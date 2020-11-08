@@ -14,12 +14,21 @@ const rotation = keyframes`
 const LoadSymbol = styled.img`
   animation: 1s ${rotation} linear infinite both;
   display: block;
-  height: 120px;
+  height: 100px;
   margin: auto;
-  margin-top: 35vh;
-  width: 120px;
+  width: 100px;
+`;
+
+const Margin = styled.div`
+  bakground: 'hsl(0, 0%, 98%)'};
+  padding: 18vh;
 `;
 
 export const LoadingPage = () => {
-  return <LoadSymbol src={loadIcon} alt="Loading Icon" />
+  return (
+  <div>
+    <Margin />
+    <LoadSymbol src={loadIcon} alt="Loading Icon" />
+  </div>
+  );
 }

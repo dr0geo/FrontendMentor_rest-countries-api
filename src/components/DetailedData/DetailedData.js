@@ -19,6 +19,10 @@ const GridColCont = styled.ul`
   grid-auto-flow: column;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(5, 1fr);
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+  }
 `;
 
 const DetailsLi = styled.li`

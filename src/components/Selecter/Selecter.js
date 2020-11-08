@@ -9,6 +9,8 @@ const SelectMenu = styled.select`
   border: none;
   border-radius: 5px;
   color: ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
+  margin-bottom: 20px;
+  max-width: 250px;
   padding: 10px 45px 10px 15px;
   transition: all 0.3s ease-in-out;
 `;

@@ -8,13 +8,18 @@ const Wrapper = styled.div`
   background: ${props => props.darkMode ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)'};
   margin: auto;
   max-width: 1200px;
-  padding: 50px 0px;
+  padding: 50px 40px;
   transition: all 0.3s ease-in-out;
 `;
 
 const Filter = styled.div`
   display: flex;
   justify-content: space-between;
+  @media only screen and (max-width: 650px) {
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 `;
 
 const Grid = styled.ul`
@@ -24,6 +29,16 @@ const Grid = styled.ul`
   grid-auto-flow: row;
   justify-content: space-between;
   margin: 50px 0px;
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: repeat(3, 250px);
+  }
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: repeat(2, 250px);
+  }
+  @media only screen and (max-width: 650px) {
+    justify-content: center;
+    grid-template-columns: 250px;
+  }
 `;
  
 export const MainPage = ({ darkMode, countries, handleChange, inputText, handleSelect, regionInput, displayDetails}) => {
