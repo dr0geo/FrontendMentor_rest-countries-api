@@ -9,6 +9,7 @@ const Li = styled.li`
   :hover {
     cursor: pointer;
   }
+  transition: all 0.3s ease-in-out;
 `;
 
 const Image = styled.img`
@@ -28,9 +29,9 @@ const Paragraph = styled.p`
   padding: 0px 20px;
 `;
 
-export const ListItems = ({ country, darkMode }) => {
+export const ListItems = ({ country, darkMode, displayDetails }) => {
   return (
-    <Li value={country.name} darkMode={darkMode}>
+    <Li value={country.name} darkMode={darkMode} onClick={() => displayDetails(country.name)}>
       <Image src={country.flag} alt={`${country.name} flag`} />
       <SubTitle>{country.name}</SubTitle>
       <Paragraph><strong>Population:</strong> {country.population.toLocaleString('en-EN')}</Paragraph>

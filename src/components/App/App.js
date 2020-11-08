@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   color: ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
   font-family: 'Nunito-sans', sans-serif;
   font-weight: 400;
+  transition: all 0.3s ease-in-out;
 `;
 
 export const App = () => {
@@ -42,11 +43,14 @@ export const App = () => {
 
   const handleSelect = ({ target }) => setRegionInput(target.value);
 
-  // Use state for loading screen:
+  // Use state for loading screen while fetching data:
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Use state for displaying normal or details page:
   const [page, setPage] = useState('');
+
+  const displayDetails = country => setPage(country);
+  const backToMainPage = () => setPage('');
 
   // Define what to display in the main section:
   const mainPage = (
@@ -58,6 +62,7 @@ export const App = () => {
         inputText={inputText}
         handleSelect={handleSelect}
         regionInput={regionInput}
+        displayDetails={displayDetails}
       />
       : <LoadingPage />
   );
@@ -66,6 +71,8 @@ export const App = () => {
     <DetailsPage 
       darkMode={darkMode}
       countries={countries}
+      page={page}
+      backToMainPage={backToMainPage}
     />
   );
 

@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   margin: auto;
   max-width: 1200px;
   padding: 50px 20px;
+  transition: all 0.3s ease-in-out;
 `;
 
 const Filter = styled.div`
@@ -25,7 +26,7 @@ const Grid = styled.ul`
   margin: 50px 0px;
 `;
  
-export const MainPage = ({ darkMode, countries, handleChange, inputText, handleSelect, regionInput}) => {
+export const MainPage = ({ darkMode, countries, handleChange, inputText, handleSelect, regionInput, displayDetails}) => {
 
   const countriesToDisplay = countries.filter(country => country.name.toLowerCase().includes(inputText.toLowerCase())).filter(country => country.region.toLowerCase().includes(regionInput.toLowerCase()));
 
@@ -42,7 +43,7 @@ export const MainPage = ({ darkMode, countries, handleChange, inputText, handleS
         />
       </Filter>
       <Grid>
-        {countriesToDisplay.map(country => <ListItems country={country} darkMode={darkMode} key={country.alpha3Code} />)}
+        {countriesToDisplay.map(country => <ListItems country={country} darkMode={darkMode} key={country.alpha3Code} displayDetails={displayDetails} />)}
       </Grid>
     </Wrapper>
   );

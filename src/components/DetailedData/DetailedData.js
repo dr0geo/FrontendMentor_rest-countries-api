@@ -3,25 +3,34 @@ import styled from 'styled-components';
 import { BorderCountries } from '../BorderCountries/BorderCountries';
 
 const Wrapper = styled.div`
-  height: 320px;
+  padding-left: 70px;
 `;
 
-const FlexColCont = styled.ul`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+const Title = styled.div`
+  font-size: 1.5em;
+  font-weight: 600;
+  padding-bottom: 20px;
+`;
+
+const GridColCont = styled.ul`
+  align-content: center;
+  display: grid;
+  gap: 10px 40px;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 `;
 
 const DetailsLi = styled.li`
-  font-size: 0.8em;
+  font-size: 0.85em;
   list-style-type: none;
 `;
 
 export const DetailedData = ({ country, darkMode }) => {
   return (
     <Wrapper>
-      <h2>{country.name}</h2>
-      <FlexColCont>
+      <Title>{country.name}</Title>
+      <GridColCont>
         <DetailsLi><strong>Native Name:</strong> {country.nativeName}</DetailsLi>
         <DetailsLi><strong>Population:</strong> {country.population}</DetailsLi>
         <DetailsLi><strong>Region:</strong> {country.region}</DetailsLi>
@@ -30,7 +39,7 @@ export const DetailedData = ({ country, darkMode }) => {
         <DetailsLi><strong>Top Level Domain:</strong> {country.topLevelDomain}</DetailsLi>
         <DetailsLi><strong>Currencies:</strong> {country.currencies.name}</DetailsLi>
         <DetailsLi><strong>Languages:</strong> {country.languages.name}</DetailsLi>
-      </FlexColCont>
+      </GridColCont>
         <BorderCountries country={country} darkMode={darkMode} />
     </Wrapper>
   );

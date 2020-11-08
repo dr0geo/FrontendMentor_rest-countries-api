@@ -10,6 +10,7 @@ const SelectMenu = styled.select`
   border-radius: 5px;
   color: ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
   padding: 10px 45px 10px 15px;
+  transition: all 0.3s ease-in-out;
 `;
 
 export const Selecter = ({ darkMode, handleSelect }) => {

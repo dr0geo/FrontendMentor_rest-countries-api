@@ -9,6 +9,7 @@ const Input = styled.input`
   border-radius: 5px;
   color: ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
   padding: 10px 10px 10px 45px;
+  transition: all 0.3s ease-in-out;
   width: 30%;
 `;
 
