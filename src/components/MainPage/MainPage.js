@@ -42,7 +42,7 @@ export const MainPage = ({ darkMode, countries, handleChange, inputText, handleS
         />
       </Filter>
       <Grid>
-        {countriesToDisplay.map(country => <ListItems country={country} darkMode={darkMode} />)}
+        {countriesToDisplay.map(country => <ListItems country={country} darkMode={darkMode} key={country.alpha3Code} />)}
       </Grid>
     </Wrapper>
   );

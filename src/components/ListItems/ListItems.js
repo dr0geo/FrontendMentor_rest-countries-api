@@ -30,7 +30,7 @@ const Paragraph = styled.p`
 
 export const ListItems = ({ country, darkMode }) => {
   return (
-    <Li key={country.alpha3Code} value={country.name} darkMode={darkMode}>
+    <Li value={country.name} darkMode={darkMode}>
       <Image src={country.flag} alt={`${country.name} flag`} />
       <SubTitle>{country.name}</SubTitle>
       <Paragraph><strong>Population:</strong> {country.population.toLocaleString('en-EN')}</Paragraph>

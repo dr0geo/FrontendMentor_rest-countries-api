@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { DetailsPage } from '../DetailsPage/DetailsPage';
 import { Header } from '../Header/Header';
 import { MainPage } from '../MainPage/MainPage';
 import './App.css';
@@ -28,22 +29,37 @@ export const App = () => {
 
   const handleChange = ({ target }) => setInputText(target.value);
 
-  //Use state for list input:
+  // Use state for list input:
   const [regionInput, setRegionInput] = useState('');
 
   const handleSelect = ({ target }) => setRegionInput(target.value);
 
+  // Use state for displaying normal or details page:
+  const [page, setPage] = useState('');
+
+  // Define what to display in the main section:
+  const mainPage = (
+    <MainPage 
+      darkMode={darkMode} 
+      countries={countries}
+      handleChange={handleChange}
+      inputText={inputText}
+      handleSelect={handleSelect}
+      regionInput={regionInput}
+    />
+  );
+
+  const detailsPage = (
+    <DetailsPage 
+      darkMode={darkMode}
+      countries={countries}
+    />
+  );
+
   return (
     <div className={darkMode ? 'dark-app' : 'light-app'}>
       <Header onClick={handleClick} darkMode={darkMode} />
-      <MainPage 
-        darkMode={darkMode} 
-        countries={countries}
-        handleChange={handleChange}
-        inputText={inputText}
-        handleSelect={handleSelect}
-        regionInput={regionInput}
-      />
+      {page === '' ? mainPage : detailsPage}
     </div>
   );
 }

@@ -1,36 +1,49 @@
 import React from 'react';
-import './DetailsPage.css';
+import styled from 'styled-components';
+import backArrow from './arrow-back.svg';
+import { DetailedData } from '../DetailedData/DetailedData';
 
-export const DetailsPage = ({ page, countries }) => {
+const Wrapper = styled.div`
+  background: ${props => props.darkMode ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)'};
+  margin: auto;
+  max-width: 1200px;
+  padding: 50px 20px;
+`;
+
+const BackButton = styled.button`
+  background: url(${backArrow}) no-repeat left 30px center / 25px 20px;
+  background-color: ${props => props.darkMode ? 'hsl(209, 23%, 22%)' : 'white'};
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px 2px lightgray;
+  padding: 10px 40px 10px 60px;
+  :hover {
+    cursor: pointer;
+  }
+`;
+
+const FlexRowCont = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0px;
+`;
+
+const Flag = styled.img`
+  display: block;
+  height: 320px;
+  width: 475px;
+`;
+
+export const DetailsPage = ({ countries, darkMode }) => {
   const country = countries[0];
 
   return (
-    <div className="details">
-      <div><button className="back-button">Back</button></div>
-      <div className="flex-row">
-        <img className="flag" src={country.flag} alt={`${country.name} flag`} />
-        <div className="country-details">
-          <h2>{country.name}</h2>
-          <div>
-            <ul className="flex-column">
-              <li className="list-item"><strong>Native Name:</strong> {country.nativeName}</li>
-              <li className="list-item"><strong>Population:</strong> {country.population}</li>
-              <li className="list-item"><strong>Region:</strong> {country.region}</li>
-              <li className="list-item"><strong>Sub Region:</strong> {country.subregion}</li>
-              <li className="list-item"><strong>Capital:</strong> {country.capital}</li>
-              <li className="list-item"><strong>Top Level Domain:</strong> {country.topLevelDomain}</li>
-              <li className="list-item"><strong>Currencies:</strong> {country.currencies.name}</li>
-              <li className="list-item"><strong>Languages:</strong> {country.languages.name}</li>
-            </ul>
-          </div>
-          <div className="flex-row">
-            <h3>Border Countries:</h3>
-            <ul className="flex-row">
-              {country.borders.map(borderCountry => <li>{borderCountry}</li>)}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Wrapper darkMode={darkMode}>
+      <BackButton darkMode={darkMode} />
+      <FlexRowCont>
+        <Flag src={country.flag} alt={`${country.name} flag`} />
+        <DetailedData country={country} darkMode={darkMode} />
+      </FlexRowCont>
+    </Wrapper>
   );
 }
