@@ -1,15 +1,37 @@
 import React from 'react';
-import './MainPage.css';
+import styled from 'styled-components';
 import { SearchInput } from '../SearchInput/SearchInput';
 import { Selecter } from '../Selecter/Selecter';
+import { ListItems } from '../ListItems/ListItems';
+
+const Wrapper = styled.div`
+  background: ${props => props.darkMode ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)'};
+  margin: auto;
+  max-width: 1200px;
+  padding: 50px 20px;
+`;
+
+const Filter = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Grid = styled.ul`
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 250px);
+  grid-auto-flow: row;
+  justify-content: space-between;
+  margin: 50px 0px;
+`;
  
-export const MainPage = ({ darkMode, countries, handleChange, inputText, handleSelect, regionInput, handleDetailsDisplay }) => {
+export const MainPage = ({ darkMode, countries, handleChange, inputText, handleSelect, regionInput}) => {
 
   const countriesToDisplay = countries.filter(country => country.name.toLowerCase().includes(inputText.toLowerCase())).filter(country => country.region.toLowerCase().includes(regionInput.toLowerCase()));
 
   return (
-    <div className={darkMode ? 'dark-main' : 'light-main'}>
-      <div className="filters">
+    <Wrapper darkMode={darkMode}>
+      <Filter>
         <SearchInput 
           darkMode={darkMode}
           handleChange={handleChange}
@@ -18,20 +40,10 @@ export const MainPage = ({ darkMode, countries, handleChange, inputText, handleS
           darkMode={darkMode}
           handleSelect={handleSelect}
         />
-      </div>
-      <ul className={darkMode ? 'dark-card' : 'light-card'}>
-        {countriesToDisplay.map(country => {
-          return (
-            <li key={country.alpha3Code} value={country.name} onClick={handleDetailsDisplay} className="base-list">
-              <img src={country.flag} alt={`${country.name} flag`} />
-              <h2>{country.name}</h2>
-              <p><strong>Population:</strong> {country.population.toLocaleString('en-EN')}</p>
-              <p><strong>Region:</strong> {country.region}</p>
-              <p><strong>Capital:</strong> {country.capital}</p>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+      </Filter>
+      <Grid>
+        {countriesToDisplay.map(country => <ListItems country={country} darkMode={darkMode} />)}
+      </Grid>
+    </Wrapper>
   );
 }
