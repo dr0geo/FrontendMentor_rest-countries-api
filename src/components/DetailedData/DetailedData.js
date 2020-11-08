@@ -44,8 +44,8 @@ export const DetailedData = ({ country, darkMode }) => {
         <DetailsLi><strong>Sub Region</strong>: {country.subregion}</DetailsLi>
         <DetailsLi><strong>Capital</strong>: {country.capital}</DetailsLi>
         <DetailsLi><strong>Top Level Domain</strong>: {country.topLevelDomain}</DetailsLi>
-        <DetailsLi><strong>Currencies</strong>: {country.currencies.name}</DetailsLi>
-        <DetailsLi><strong>Languages</strong>: {country.languages.name}</DetailsLi>
+        <DetailsLi><strong>Currencies</strong>: {country.currencies.map(currency => currency.name).join(', ')}</DetailsLi>
+        <DetailsLi><strong>Languages</strong>: {country.languages.map(language => language.name).join(', ')}</DetailsLi>
       </GridColCont>
         <BorderCountries country={country} darkMode={darkMode} />
     </Wrapper>
