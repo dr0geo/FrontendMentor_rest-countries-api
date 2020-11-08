@@ -5,6 +5,7 @@ const BorderCountry = styled.em`
   background: ${props => props.darkMode ? 'hsl(209, 23%, 22%)' : 'white'};
   border-radius: 5px;
   box-shadow: 0px 0px 2px 2px ${props => props.darkMode ? 'hsl(248, 17%, 10%)' : 'lightgray'};
+  font-size: 0.85em;
   margin: 0px 10px;
   padding: 5px 15px;
   transition: all 0.3s ease-in-out;

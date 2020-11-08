@@ -11,7 +11,9 @@ const StyledHeader = styled.header`
   margin: auto;
   max-width: 1200px;
   padding: 0px 40px;
+  position: relative;
   transition: all 0.3s ease-in-out;
+  z-index: 1;
   @media only screen and (max-width: 400px) {
     padding: 0px 10px;
   }

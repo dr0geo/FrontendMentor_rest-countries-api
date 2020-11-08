@@ -14,8 +14,10 @@ const Wrapper = styled.div`
 
 const HeaderContainer = styled.div`
   background: ${props => props.darkMode ? 'hsl(209, 23%, 22%)' : 'white'};
+  position: relative;
   transition: all 0.3s ease-in-out;
   width: 100%;
+  z-index: 1;
 `;
 
 const MainContainer = styled.div`

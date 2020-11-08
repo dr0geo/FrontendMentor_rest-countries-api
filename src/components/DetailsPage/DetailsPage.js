@@ -6,8 +6,10 @@ import { DetailedData } from '../DetailedData/DetailedData';
 const Wrapper = styled.div`
   background: ${props => props.darkMode ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)'};
   margin: auto;
+  margin-top: -60px;
   max-width: 1200px;
-  padding: 50px 0px;
+  padding: 110px 0px;
+  position: relative;
   transition: all 0.3s ease-in-out;
 `;
 

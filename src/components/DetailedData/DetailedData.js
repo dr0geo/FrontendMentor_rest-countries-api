@@ -4,6 +4,9 @@ import { BorderCountries } from '../BorderCountries/BorderCountries';
 
 const Wrapper = styled.div`
   padding-left: 70px;
+  @media only screen and (max-width: 800px) {
+    justify-self: left;
+  }
 `;
 
 const Title = styled.div`
