@@ -46,7 +46,7 @@ const Grid = styled.ul`
   }
 `;
  
-export const MainPage = ({ darkMode, countries, handleChange, inputText, handleSelect, regionInput, displayDetails}) => {
+export const MainPage = ({ darkMode, countries, handleChange, inputText, handleSelect, regionInput, displayDetails, isClicked, handleDisplayMenu}) => {
 
   const countriesToDisplay = countries.filter(country => country.name.toLowerCase().includes(inputText.toLowerCase())).filter(country => country.region.toLowerCase().includes(regionInput.toLowerCase()));
 
@@ -60,6 +60,8 @@ export const MainPage = ({ darkMode, countries, handleChange, inputText, handleS
         <Selecter
           darkMode={darkMode}
           handleSelect={handleSelect}
+          isClicked={isClicked}
+          handleDisplayMenu={handleDisplayMenu}
         />
       </Filter>
       <Grid>

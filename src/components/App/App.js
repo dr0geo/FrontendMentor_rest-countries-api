@@ -53,6 +53,11 @@ export const App = () => {
 
   const handleChange = ({ target }) => setInputText(target.value);
 
+  // Use state to display regions list:
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleDisplayMenu = () => setIsClicked(() => !isClicked);
+
   // Use state for list input:
   const [regionInput, setRegionInput] = useState('');
 
@@ -87,6 +92,8 @@ export const App = () => {
         handleSelect={handleSelect}
         regionInput={regionInput}
         displayDetails={displayDetails}
+        isClicked={isClicked}
+        handleDisplayMenu={handleDisplayMenu}
       />
       : <LoadingPage />
   );
