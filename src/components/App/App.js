@@ -27,10 +27,13 @@ const MainContainer = styled.div`
   width: 100%;
 `;
 
-export const App = () => {
-  //Fetch data from API:
-  const url = 'https://restcountries.eu/rest/v2/all';
+const url = 'https://restcountries.eu/rest/v2/all';
 
+export const App = () => {
+  // Use state for loading screen while fetching data:
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Fetch data from API:
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -45,7 +48,7 @@ export const App = () => {
   // Use state for light/dark mode:
   const [darkMode, setDarkMode] = useState(false);
 
-  const handleClick = () => setDarkMode(() => !darkMode);
+  const handleClick = () => setDarkMode(!darkMode);
 
   // Use state for input text:
   const [inputText, setInputText] = useState('');
@@ -55,7 +58,7 @@ export const App = () => {
   // Use state to display regions list:
   const [isClicked, setIsClicked] = useState(false);
 
-  const handleDisplayMenu = () => setIsClicked(() => !isClicked);
+  const handleDisplayMenu = () => setIsClicked(!isClicked);
 
   // Use state for list input:
   const [regionInput, setRegionInput] = useState('');
@@ -64,9 +67,6 @@ export const App = () => {
     setIsClicked(false);
     setTimeout(() => setRegionInput(selected), 100);
   }
-
-  // Use state for loading screen while fetching data:
-  const [isLoaded, setIsLoaded] = useState(false);
 
   // Use state for displaying normal or details page:
   const [page, setPage] = useState('');
@@ -120,7 +120,11 @@ export const App = () => {
   return (
     <Wrapper darkMode={darkMode}>
       <HeaderContainer darkMode={darkMode}>
-        <Header onClick={handleClick} darkMode={darkMode} backToMainPage={backToMainPage} />
+        <Header 
+          onClick={handleClick} 
+          darkMode={darkMode} 
+          backToMainPage={backToMainPage} 
+        />
       </HeaderContainer>
       <MainContainer darkMode={darkMode}>
         {page === '' ? mainPage : detailsPage}

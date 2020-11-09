@@ -47,7 +47,7 @@ const Grid = styled.ul`
 `;
  
 export const MainPage = ({ darkMode, countries, handleChange, inputText, handleSelect, regionInput, displayDetails, isClicked, handleDisplayMenu}) => {
-
+  // Filter first by input term, and then by region selected:
   const countriesToDisplay = countries.filter(country => country.name.toLowerCase().includes(inputText.toLowerCase())).filter(country => country.region.toLowerCase().includes(regionInput.toLowerCase()));
 
   return (

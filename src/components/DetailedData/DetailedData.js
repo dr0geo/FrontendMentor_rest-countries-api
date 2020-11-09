@@ -7,7 +7,8 @@ const Wrapper = styled.div`
   padding-left: 70px;
   @media only screen and (max-width: 800px) {
     align-self: flex-start;
-    padding-left: 5%;
+    margin-left: 8%;
+    padding-left: 0;
   }
 `;
 

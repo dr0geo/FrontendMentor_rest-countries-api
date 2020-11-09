@@ -72,7 +72,22 @@ export const Selecter = ({ darkMode, handleSelect, isClicked, handleDisplayMenu,
         onClick={handleDisplayMenu}
       >
         <p>{regionInput === '' ? 'Filter by Region' : regionInput}</p>
-        <Svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' height="19" width="19" darkMode={darkMode} isClicked={isClicked}><path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='48' d='M112 184l144 144 144-144'/>
+        <Svg 
+          xmlns='http://www.w3.org/2000/svg' 
+          viewBox='0 0 512 512' 
+          height="19" 
+          width="19" 
+          darkMode={darkMode} 
+          isClicked={isClicked}
+        >
+          <path 
+            fill='none' 
+            stroke='currentColor' 
+            strokeLinecap='round' 
+            strokeLinejoin='round' 
+            strokeWidth='48' 
+            d='M112 184l144 144 144-144'
+          />
         </Svg>
       </SelectMenu>
       <Wrapper darkMode={darkMode} isClicked={isClicked}>

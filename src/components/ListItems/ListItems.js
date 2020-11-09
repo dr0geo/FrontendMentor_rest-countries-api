@@ -48,8 +48,15 @@ const Paragraph = styled.p`
 
 export const ListItems = ({ country, darkMode, displayDetails }) => {
   return (
-    <Li value={country.name} darkMode={darkMode} onClick={() => displayDetails(country.name)}>
-      <Image src={country.flag} alt={`${country.name} flag`} />
+    <Li 
+      value={country.name} 
+      darkMode={darkMode} 
+      onClick={() => displayDetails(country.name)}
+    >
+      <Image 
+        src={country.flag} 
+        alt={`${country.name} flag`}
+      />
       <SubTitle>{country.name}</SubTitle>
       <Paragraph><strong>Population:</strong> {country.population.toLocaleString('en-EN')}</Paragraph>
       <Paragraph><strong>Region:</strong> {country.region}</Paragraph>

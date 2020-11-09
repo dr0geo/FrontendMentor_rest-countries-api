@@ -42,6 +42,9 @@ const BackButton = styled.button`
       transform: scale(0.95);
     }
   }
+  @media only screen and (max-width: 800px) {
+    margin-left: 6%;
+  }
 `;
 
 const FlexRowCont = styled.div`
@@ -58,7 +61,7 @@ const FlexRowCont = styled.div`
 const Flag = styled.img`
   box-shadow: ${props => !props.darkMode && '0px 0px 2px 2px lightgray'};
   display: block;
-  flex: 1 1 content;
+  flex: 1 1 400px;
   margin-left: 40px;
   transition: all 0.3s ease-in-out;
   @media only screen and (max-width: 800px) {
@@ -68,17 +71,38 @@ const Flag = styled.img`
 `;
 
 export const DetailsPage = ({ countries, darkMode, page, backToMainPage, toFullName, displayDetails }) => {
+
   const country = countries.filter(country => country.name === page)[0];
 
   return (
     <Wrapper darkMode={darkMode}>
-      <BackButton darkMode={darkMode} onClick={backToMainPage}>
-        <Svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' height="19" width="19"><path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='48' d='M244 400L100 256l144-144M120 256h292'/>
+      <BackButton 
+        darkMode={darkMode} 
+        onClick={backToMainPage}
+      >
+        <Svg 
+          xmlns='http://www.w3.org/2000/svg' 
+          viewBox='0 0 512 512' 
+          height="19" 
+          width="19"
+        >
+          <path 
+            fill='none' 
+            stroke='currentColor' 
+            strokeLinecap='round' 
+            strokeLinejoin='round' 
+            strokeWidth='48' 
+            d='M244 400L100 256l144-144M120 256h292'        
+          />
         </Svg>
         Back
       </BackButton>
       <FlexRowCont>
-        <Flag src={country.flag} alt={`${country.name} flag`} darkMode={darkMode} />
+        <Flag 
+          src={country.flag} 
+          alt={`${country.name} flag`} 
+          darkMode={darkMode} 
+        />
         <DetailedData 
           country={country} 
           darkMode={darkMode} 

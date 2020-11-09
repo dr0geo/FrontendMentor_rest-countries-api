@@ -20,7 +20,7 @@ const LoadSymbol = styled.img`
 `;
 
 const Margin = styled.div`
-  bakground: 'hsl(0, 0%, 98%)'};
+  background: 'hsl(0, 0%, 98%)'};
   padding: 18vh;
 `;
 
@@ -28,7 +28,10 @@ export const LoadingPage = () => {
   return (
   <div>
     <Margin />
-    <LoadSymbol src={loadIcon} alt="Loading Icon" />
+    <LoadSymbol 
+      src={loadIcon} 
+      alt="" 
+    />
   </div>
   );
 }
