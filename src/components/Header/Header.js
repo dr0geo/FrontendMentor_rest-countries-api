@@ -33,10 +33,19 @@ const Title = styled.h1`
 `;
 
 const Button = styled.div`
+  border: 2px solid transparent;
+  border-radius: 5px;
   font-size: 0.9em;
-  padding-left: 20px;
+  padding: 3px 10px 5px 10px;
+  transform: scale(0.95);
+  transition: border 0.15s ease-in-out, transform 0.15s ease-in-out;
   :hover {
+    border: 2px solid ${props => props.darkMode ? 'white' : 'hsl(209, 23%, 22%)'};
     cursor: pointer;
+    transform: scale(1);
+  }
+  :active {
+    transform: scale(0.95);
   }
   @media only screen and (max-width: 400px) {
     font-size: 0.80em;
@@ -48,7 +57,7 @@ const Svg = styled.svg`
   padding-right: 5px;
   position: relative;
   top: 5px;
-  transition: all 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out, color 0.15s ease-in-out;
 `;
 
 export const Header = ({ onClick, darkMode, backToMainPage }) => {
