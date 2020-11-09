@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import moon from './moon.svg';
 
 const StyledHeader = styled.header`
   align-items: center;
@@ -34,7 +33,6 @@ const Title = styled.h1`
 `;
 
 const Button = styled.div`
-  background: url(${moon}) no-repeat left center / 16px 16px;
   font-size: 0.9em;
   padding-left: 20px;
   :hover {
@@ -45,11 +43,17 @@ const Button = styled.div`
   }
 `;
 
+const Svg = styled.svg`
+  padding-right: 5px;
+  position: relative;
+  top: 5px;
+`;
+
 export const Header = ({ onClick, darkMode, backToMainPage }) => {
   return (
     <StyledHeader darkMode={darkMode}>
       <Title onClick={backToMainPage}>Where in the world?</Title>
-      <Button onClick={onClick}>Dark Mode</Button>
+      <Button onClick={onClick} darkMode={darkMode}><Svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' height="18" width="18"><path d='M160 136c0-30.62 4.51-61.61 16-88C99.57 81.27 48 159.32 48 248c0 119.29 96.71 216 216 216 88.68 0 166.73-51.57 200-128-26.39 11.49-57.38 16-88 16-119.29 0-216-96.71-216-216z' fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='32'/></Svg>Dark Mode</Button>
     </StyledHeader>
   );
 }
