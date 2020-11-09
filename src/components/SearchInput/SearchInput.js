@@ -16,9 +16,12 @@ const Input = styled.input`
   border-radius: 0px 5px 5px 0px;
   color: ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
   margin-bottom: 20px;
-  min-width: 200px;
   padding: 10px;
   transition: all 0.3s ease-in-out;
+  width: 350px;
+  @media only screen and (max-width: 800px) {
+    width: 200px;
+  }
 `;
 
 export const SearchInput = ({ darkMode, handleChange }) => {
