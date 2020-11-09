@@ -105,7 +105,7 @@ export const App = () => {
   return (
     <Wrapper darkMode={darkMode}>
       <HeaderContainer darkMode={darkMode}>
-        <Header onClick={handleClick} darkMode={darkMode} />
+        <Header onClick={handleClick} darkMode={darkMode} backToMainPage={backToMainPage} />
       </HeaderContainer>
       <MainContainer darkMode={darkMode}>
         {page === '' ? mainPage : detailsPage}

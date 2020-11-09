@@ -40,9 +40,11 @@ const FlexRowCont = styled.div`
 `;
 
 const Flag = styled.img`
+  box-shadow: ${props => !props.darkMode && '0px 0px 2px 2px lightgray'};
   display: block;
   flex: 1 1 content;
   margin-left: 40px;
+  transition: all 0.3s ease-in-out;
   @media only screen and (max-width: 800px) {
     margin-bottom: 50px;
     width: 95%;
@@ -56,7 +58,7 @@ export const DetailsPage = ({ countries, darkMode, page, backToMainPage, toFullN
     <Wrapper darkMode={darkMode}>
       <BackButton darkMode={darkMode} onClick={backToMainPage}>Back</BackButton>
       <FlexRowCont>
-        <Flag src={country.flag} alt={`${country.name} flag`} />
+        <Flag src={country.flag} alt={`${country.name} flag`} darkMode={darkMode} />
         <DetailedData 
           country={country} 
           darkMode={darkMode} 

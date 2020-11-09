@@ -22,6 +22,9 @@ const StyledHeader = styled.header`
 const Title = styled.h1`
   font-size: 1.7em;
   font-weight: 800;
+  :hover {
+    cursor: pointer;
+  }
   @media only screen and (max-width: 650px) {
     font-size: 1.2em;
   }
@@ -42,10 +45,10 @@ const Button = styled.div`
   }
 `;
 
-export const Header = ({ onClick, darkMode }) => {
+export const Header = ({ onClick, darkMode, backToMainPage }) => {
   return (
     <StyledHeader darkMode={darkMode}>
-      <Title>Where in the world?</Title>
+      <Title onClick={backToMainPage}>Where in the world?</Title>
       <Button onClick={onClick}>Dark Mode</Button>
     </StyledHeader>
   );
