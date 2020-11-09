@@ -16,6 +16,7 @@ const Wrapper = styled.div`
 `;
 
 const Filter = styled.div`
+  align-items: baseline;
   display: flex;
   justify-content: space-between;
   @media only screen and (max-width: 650px) {
