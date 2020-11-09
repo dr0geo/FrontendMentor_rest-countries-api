@@ -16,6 +16,10 @@ const Image = styled.img`
   border-radius: 5px 5px 0px 0px;
   height: 150px;
   width: 250px;
+  @media only screen and (max-width: 1200px) {
+    height: auto;
+    width: 100%;
+  }
 `;
 
 const SubTitle = styled.h2`

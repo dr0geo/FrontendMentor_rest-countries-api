@@ -10,6 +10,9 @@ const Wrapper = styled.div`
   max-width: 1200px;
   padding: 50px 40px;
   transition: all 0.3s ease-in-out;
+  @media only screen and (max-width: 500px) {
+    padding: 20px 20px;
+  }
 `;
 
 const Filter = styled.div`
@@ -28,16 +31,17 @@ const Grid = styled.ul`
   grid-template-columns: repeat(4, 250px);
   grid-auto-flow: row;
   justify-content: space-between;
-  margin: 50px 0px;
+  margin: 40px 0px;
   @media only screen and (max-width: 1200px) {
-    grid-template-columns: repeat(3, 250px);
+    grid-template-columns: repeat(3, 1fr);
   }
   @media only screen and (max-width: 900px) {
-    grid-template-columns: repeat(2, 250px);
+    grid-template-columns: repeat(2, 1fr);
   }
   @media only screen and (max-width: 650px) {
     justify-content: center;
-    grid-template-columns: 250px;
+    grid-template-columns: 1fr;
+    margin: 10px 0px;
   }
 `;
  
