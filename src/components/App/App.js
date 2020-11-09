@@ -28,7 +28,6 @@ const MainContainer = styled.div`
 `;
 
 export const App = () => {
-
   //Fetch data from API:
   const url = 'https://restcountries.eu/rest/v2/all';
 
@@ -72,13 +71,17 @@ export const App = () => {
   // Use state for displaying normal or details page:
   const [page, setPage] = useState('');
 
-  const displayDetails = country => setPage(country);
+  const displayDetails = country => {
+    setPage(country);
+    window.scrollTo(0, 0);
+  }
 
   // Reset main page when BackButton is clicked on details page:
   const backToMainPage = () => {
     setPage('');
     setInputText('');
     setRegionInput('');
+    window.scrollTo(0, 0);
   };
 
   // Retrieve full country name from API borders results:

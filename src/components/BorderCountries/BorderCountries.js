@@ -14,13 +14,13 @@ const BorderCountry = styled.em`
   }
 `;
 
-const Paragraph = styled.p`
+const Paragraph = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding-top: 20px;
 `;
 
-const SubHeader = styled.h3`
+const SubHeader = styled.p`
   font-weight: 600;
   margin-bottom: 20px;
   margin-right: 10px;
@@ -37,7 +37,7 @@ export const BorderCountries = ({ country, darkMode, toFullName, displayDetails 
 
   return (
     <Paragraph>
-      <SubHeader>Border Countries<Span>:</Span></SubHeader> {fullNameCountries.map(country => <BorderCountry darkMode={darkMode} onClick={() => displayDetails(country.name)}>{country.name}</BorderCountry>)}
+      <SubHeader>Border Countries<Span>:</Span></SubHeader> {fullNameCountries.map(country => <BorderCountry key={country.alpha3Code} darkMode={darkMode} onClick={() => displayDetails(country.name)}>{country.name}</BorderCountry>)}
     </Paragraph>
   );
 };

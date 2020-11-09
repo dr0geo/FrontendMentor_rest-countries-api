@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import backArrow from './arrow-back.svg';
 import { DetailedData } from '../DetailedData/DetailedData';
 
 const Wrapper = styled.div`
@@ -13,15 +12,21 @@ const Wrapper = styled.div`
   transition: all 0.3s ease-in-out;
 `;
 
+const Svg = styled.svg`
+  padding-right: 10px;
+  position: relative;
+  top: 5px;
+  transition: all 0.3s ease-in-out;
+`;
+
 const BackButton = styled.button`
-  background: url(${backArrow}) no-repeat left 30px center / 25px 20px;
   background-color: ${props => props.darkMode ? 'hsl(209, 23%, 22%)' : 'white'};
   border: none;
   border-radius: 5px;
   box-shadow: 0px 0px 2px 2px ${props => props.darkMode ? 'hsl(248, 17%, 10%)' : 'lightgray'};
   color: ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
   margin-left: 40px;
-  padding: 10px 40px 10px 60px;
+  padding: 5px 40px 10px 40px;
   :hover {
     cursor: pointer;
   }
@@ -56,7 +61,7 @@ export const DetailsPage = ({ countries, darkMode, page, backToMainPage, toFullN
 
   return (
     <Wrapper darkMode={darkMode}>
-      <BackButton darkMode={darkMode} onClick={backToMainPage}>Back</BackButton>
+      <BackButton darkMode={darkMode} onClick={backToMainPage}><Svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' height="19" width="19"><path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='48' d='M244 400L100 256l144-144M120 256h292'/></Svg>Back</BackButton>
       <FlexRowCont>
         <Flag src={country.flag} alt={`${country.name} flag`} darkMode={darkMode} />
         <DetailedData 
