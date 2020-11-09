@@ -61,7 +61,10 @@ export const App = () => {
   // Use state for list input:
   const [regionInput, setRegionInput] = useState('');
 
-  const handleSelect = ({ target }) => setRegionInput(target.value);
+  const handleSelect = selected => {
+    setTimeout(() => setRegionInput(selected), 100);
+    setIsClicked(false);
+  }
 
   // Use state for loading screen while fetching data:
   const [isLoaded, setIsLoaded] = useState(false);

@@ -39,29 +39,30 @@ const Wrapper = styled.div`
 
 const Option = styled.div`
   font-size: 0.9em;
-  margin: 5px 0px;
-  padding: 5px 15px;
+  margin: 4px 0px;
+  padding: 3px 15px;
   transition: all 0.3s ease-in-out;
   :hover {
     cursor: pointer;
   }
 `;
 
-export const Selecter = ({ darkMode, handleSelect, isClicked, handleDisplayMenu }) => {
+export const Selecter = ({ darkMode, handleSelect, isClicked, handleDisplayMenu, regionInput }) => {
   return (
     <div>
       <SelectMenu
         darkMode={darkMode}
         onChange={handleSelect}
         onClick={handleDisplayMenu}
-      ><p>Filter by Region</p><Svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' height="19" width="19" darkMode={darkMode} isClicked={isClicked}><path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='48' d='M112 184l144 144 144-144'/></Svg>
+      ><p>{regionInput === '' ? 'Filter by Region' : regionInput}</p><Svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' height="19" width="19" darkMode={darkMode} isClicked={isClicked}><path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='48' d='M112 184l144 144 144-144'/></Svg>
       </SelectMenu>
       <Wrapper darkMode={darkMode} isClicked={isClicked}>
-        <Option value="africa">Africa</Option>
-        <Option value="america">America</Option>
-        <Option value="asia">Asia</Option>
-        <Option value="europe">Europe</Option>
-        <Option value="oceania">Oceania</Option>
+        <Option onClick={() => handleSelect('')}>All Regions</Option>
+        <Option onClick={() => handleSelect('Africa')}>Africa</Option>
+        <Option onClick={() => handleSelect('America')}>America</Option>
+        <Option onClick={() => handleSelect('Asia')}>Asia</Option>
+        <Option onClick={() => handleSelect('Europe')}>Europe</Option>
+        <Option onClick={() => handleSelect('Oceania')}>Oceania</Option>   
       </Wrapper>
     </div>
   );

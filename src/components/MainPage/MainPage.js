@@ -62,6 +62,7 @@ export const MainPage = ({ darkMode, countries, handleChange, inputText, handleS
           handleSelect={handleSelect}
           isClicked={isClicked}
           handleDisplayMenu={handleDisplayMenu}
+          regionInput={regionInput}
         />
       </Filter>
       <Grid>
