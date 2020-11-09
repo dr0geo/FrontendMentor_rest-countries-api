@@ -65,11 +65,16 @@ export const App = () => {
   const [page, setPage] = useState('');
 
   const displayDetails = country => setPage(country);
+
+  // Reset main page when BackButton is clicked on details page:
   const backToMainPage = () => {
     setPage('');
     setInputText('');
     setRegionInput('');
   };
+
+  // Retrieve full country name from API borders results:
+  const toFullName = alphaCode => countries.filter(country => country.alpha3Code === alphaCode)[0];
 
   // Define what to display in the main section:
   const mainPage = (
@@ -92,6 +97,8 @@ export const App = () => {
       countries={countries}
       page={page}
       backToMainPage={backToMainPage}
+      toFullName={toFullName}
+      displayDetails={displayDetails}
     />
   );
 

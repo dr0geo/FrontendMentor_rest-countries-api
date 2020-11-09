@@ -41,15 +41,15 @@ const FlexRowCont = styled.div`
 
 const Flag = styled.img`
   display: block;
-  flex: 1 1 200px;
+  flex: 1 1 content;
   margin-left: 40px;
   @media only screen and (max-width: 800px) {
-    width: 90%;
     margin-bottom: 50px;
+    width: 95%;
   }
 `;
 
-export const DetailsPage = ({ countries, darkMode, page, backToMainPage }) => {
+export const DetailsPage = ({ countries, darkMode, page, backToMainPage, toFullName, displayDetails }) => {
   const country = countries.filter(country => country.name === page)[0];
 
   return (
@@ -57,7 +57,12 @@ export const DetailsPage = ({ countries, darkMode, page, backToMainPage }) => {
       <BackButton darkMode={darkMode} onClick={backToMainPage}>Back</BackButton>
       <FlexRowCont>
         <Flag src={country.flag} alt={`${country.name} flag`} />
-        <DetailedData country={country} darkMode={darkMode} />
+        <DetailedData 
+          country={country} 
+          darkMode={darkMode} 
+          toFullName={toFullName} 
+          displayDetails={displayDetails}
+        />
       </FlexRowCont>
     </Wrapper>
   );

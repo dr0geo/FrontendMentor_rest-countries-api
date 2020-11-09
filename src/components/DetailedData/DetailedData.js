@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import { BorderCountries } from '../BorderCountries/BorderCountries';
 
 const Wrapper = styled.div`
+  flex: 1 1 content;
   padding-left: 70px;
   @media only screen and (max-width: 800px) {
-    justify-self: left;
+    align-self: flex-start;
+    padding-left: 5%;
   }
 `;
 
@@ -33,7 +35,7 @@ const DetailsLi = styled.li`
   list-style-type: none;
 `;
 
-export const DetailedData = ({ country, darkMode }) => {
+export const DetailedData = ({ country, darkMode, toFullName, displayDetails }) => {
   return (
     <Wrapper>
       <Title>{country.name}</Title>
@@ -47,7 +49,12 @@ export const DetailedData = ({ country, darkMode }) => {
         <DetailsLi><strong>Currencies</strong>: {country.currencies.map(currency => currency.name).join(', ')}</DetailsLi>
         <DetailsLi><strong>Languages</strong>: {country.languages.map(language => language.name).join(', ')}</DetailsLi>
       </GridColCont>
-        <BorderCountries country={country} darkMode={darkMode} />
+        <BorderCountries 
+          country={country} 
+          darkMode={darkMode} 
+          toFullName={toFullName} 
+          displayDetails={displayDetails}
+        />
     </Wrapper>
   );
 };
