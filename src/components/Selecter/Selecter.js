@@ -20,10 +20,10 @@ const SelectMenu = styled.div`
 
 const Svg = styled.svg`
   background: ${props => props.darkMode ? 'hsl(209, 23%, 22%)' : 'white'};
-  padding-left: 5px;
   position: relative;
-  top: 5px;
-  transition: all 0.3s ease-in-out;
+  top: 3px;
+  transform: ${props => props.isClicked ? 'rotate(180deg)' : 'rotate(0deg)'};
+  transition: background 0.3s ease-in-out, transform 0.15s ease-in-out;
 `;
 
 const Wrapper = styled.div`
@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   position: absolute;
   transform: ${props => props.isClicked ? 'scaleY(100%)' : 'scaleY(0%)'};
   transform-origin: top center;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, transform 0.15s ease-in-out;
   width: 200px;
   z-index: 1;
 `;
@@ -54,7 +54,7 @@ export const Selecter = ({ darkMode, handleSelect, isClicked, handleDisplayMenu 
         darkMode={darkMode}
         onChange={handleSelect}
         onClick={handleDisplayMenu}
-      ><p>Filter by Region</p><Svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' height="19" width="19" darkMode={darkMode}><path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='48' d='M112 184l144 144 144-144'/></Svg>
+      ><p>Filter by Region</p><Svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' height="19" width="19" darkMode={darkMode} isClicked={isClicked}><path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='48' d='M112 184l144 144 144-144'/></Svg>
       </SelectMenu>
       <Wrapper darkMode={darkMode} isClicked={isClicked}>
         <Option value="africa">Africa</Option>
