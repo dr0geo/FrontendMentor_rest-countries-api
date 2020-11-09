@@ -61,8 +61,8 @@ export const App = () => {
   const [regionInput, setRegionInput] = useState('');
 
   const handleSelect = selected => {
-    setTimeout(() => setRegionInput(selected), 100);
     setIsClicked(false);
+    setTimeout(() => setRegionInput(selected), 100);
   }
 
   // Use state for loading screen while fetching data:
