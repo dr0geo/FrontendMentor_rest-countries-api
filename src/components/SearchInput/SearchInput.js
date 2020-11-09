@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Svg = styled.svg`
-  left: 30px;
+  left: 15px;
   position: relative;
-  top: 4px;
+  top: 5px;
   transition: all 0.3s ease-in-out;
+  z-index: 1;
 `;
 
 const Input = styled.input`
@@ -15,8 +16,10 @@ const Input = styled.input`
   color: ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
   margin-bottom: 20px;
   padding: 10px 0px 10px 40px;
+  position: relative;
+  top: -32px;
   transition: all 0.3s ease-in-out;
-  width: 350px;
+  width: 85%;
   @media only screen and (min-width: 800px) {
     :hover {
       border: 2px solid ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
@@ -24,9 +27,6 @@ const Input = styled.input`
     :focus {
       border: 2px solid ${props => props.darkMode ? 'teal' : 'gray'};
     }
-  }
-  @media only screen and (max-width: 800px) {
-    width: 200px;
   }
 `;
 

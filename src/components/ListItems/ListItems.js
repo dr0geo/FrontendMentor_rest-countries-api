@@ -6,17 +6,16 @@ const Li = styled.li`
   border-radius: 5px;
   list-style-type: none;
   padding-bottom: 40px;
-  transform: scale(0.95);
   transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
   :hover {
     cursor: pointer;
   }
   @media only screen and (min-width: 800px) {
     :hover {
-      transform: scale(1);
+      transform: scale(1.05);
     }
     :active {
-      transform: scale(0.95);
+      transform: scale(1);
     }
   }
 `;
