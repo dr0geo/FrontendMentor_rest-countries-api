@@ -65,7 +65,7 @@ const Flag = styled.img`
   margin-left: 40px;
   transition: all 0.3s ease-in-out;
   @media only screen and (max-width: 800px) {
-    flex: 1 1 100px;
+    flex: 1 1 content;
     margin-bottom: 50px;
     width: 95%;
   }
