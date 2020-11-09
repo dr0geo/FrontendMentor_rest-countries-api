@@ -14,12 +14,11 @@ const Input = styled.input`
   border: 2px solid transparent;
   border-radius: 5px;
   color: ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
-  margin-bottom: 20px;
   padding: 10px 0px 10px 40px;
   position: relative;
   top: -32px;
   transition: all 0.3s ease-in-out;
-  width: 85%;
+  width: 100%;
   @media only screen and (min-width: 800px) {
     :hover {
       border: 2px solid ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
@@ -27,6 +26,9 @@ const Input = styled.input`
     :focus {
       border: 2px solid ${props => props.darkMode ? 'teal' : 'gray'};
     }
+  }
+  @media only screen and (max-width: 800px) {
+    width: 85%;
   }
 `;
 

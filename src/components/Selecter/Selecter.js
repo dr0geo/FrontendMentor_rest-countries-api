@@ -9,7 +9,7 @@ const SelectMenu = styled.div`
   display: flex;
   font-size: 0.9em;
   justify-content: space-between;
-  margin: 5px 0px;
+  margin-bottom: 30px;
   padding: 10px 15px;
   transition: background 0.3s ease-in-out, border 0.15s ease-in-out;
   width: 200px;
