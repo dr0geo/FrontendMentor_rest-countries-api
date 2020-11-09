@@ -27,10 +27,21 @@ const BackButton = styled.button`
   color: ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
   margin-left: 40px;
   padding: 5px 40px 10px 40px;
+  transform: scale(0.95);
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.15s ease-in-out;
   :hover {
     cursor: pointer;
   }
-  transition: all 0.3s ease-in-out;
+  @media only screen and (min-width: 800px) {
+    :hover {
+      background: ${props => props.darkMode ? 'hsla(0, 0%, 100%, 0.9)' : 'hsla(200, 15%, 8%, 0.95)'};
+      color: ${props => props.darkMode ? 'hsl(200, 15%, 8%)' : 'white'};
+      transform: scale(1);
+    }
+    :active {
+      transform: scale(0.95);
+    }
+  }
 `;
 
 const FlexRowCont = styled.div`
@@ -61,7 +72,11 @@ export const DetailsPage = ({ countries, darkMode, page, backToMainPage, toFullN
 
   return (
     <Wrapper darkMode={darkMode}>
-      <BackButton darkMode={darkMode} onClick={backToMainPage}><Svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' height="19" width="19"><path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='48' d='M244 400L100 256l144-144M120 256h292'/></Svg>Back</BackButton>
+      <BackButton darkMode={darkMode} onClick={backToMainPage}>
+        <Svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' height="19" width="19"><path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='48' d='M244 400L100 256l144-144M120 256h292'/>
+        </Svg>
+        Back
+      </BackButton>
       <FlexRowCont>
         <Flag src={country.flag} alt={`${country.name} flag`} darkMode={darkMode} />
         <DetailedData 

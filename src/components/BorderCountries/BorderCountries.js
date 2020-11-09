@@ -8,9 +8,20 @@ const BorderCountry = styled.em`
   font-size: 0.85em;
   margin: -2px 10px 15px 0px;
   padding: 5px 15px;
-  transition: all 0.3s ease-in-out;
+  transform: scale(0.95);
+  transition: background 0.3s ease-in-out, transform 0.15s ease-in-out;
   :hover {
     cursor: pointer;
+  }
+  @media only screen and (min-width: 800px) {
+    :hover {
+    background: ${props => props.darkMode ? 'hsla(0, 0%, 100%, 0.85)' : 'hsla(200, 15%, 8%, 0.95)'};
+    color: ${props => props.darkMode ? 'hsl(200, 15%, 8%)' : 'white'};
+    transform: scale(1);
+    }
+    :active {
+    transform: scale(0.95);
+    }
   }
 `;
 

@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SelectMenu = styled.div`
-  background-color: ${props => props.darkMode ? 'hsl(209, 23%, 22%)' : 'white'};
-  border: none;
+  background: ${props => props.darkMode ? 'hsl(209, 23%, 22%)' : 'white'};
+  border: 2px solid transparent;
   border-radius: 5px;
   color: ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
   display: flex;
@@ -11,10 +11,18 @@ const SelectMenu = styled.div`
   justify-content: space-between;
   margin: 5px 0px;
   padding: 10px 15px;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, border 0.15s ease-in-out;
   width: 200px;
   :hover {
     cursor: pointer;
+  }
+  @media only screen and (min-width: 800px) {
+    :hover {
+      border: 2px solid ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
+    }
+    :active {
+      border: 2px solid transparent;
+    }
   }
 `;
 
@@ -41,9 +49,17 @@ const Option = styled.div`
   font-size: 0.9em;
   margin: 4px 0px;
   padding: 3px 15px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
   :hover {
     cursor: pointer;
+  }
+  @media only screen and (min-width: 800px) {
+    :hover {
+      font-size: 0.95em;
+    }
+    :active {
+      font-size: 0.9em;
+    }
   }
 `;
 
@@ -54,7 +70,10 @@ export const Selecter = ({ darkMode, handleSelect, isClicked, handleDisplayMenu,
         darkMode={darkMode}
         onChange={handleSelect}
         onClick={handleDisplayMenu}
-      ><p>{regionInput === '' ? 'Filter by Region' : regionInput}</p><Svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' height="19" width="19" darkMode={darkMode} isClicked={isClicked}><path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='48' d='M112 184l144 144 144-144'/></Svg>
+      >
+        <p>{regionInput === '' ? 'Filter by Region' : regionInput}</p>
+        <Svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' height="19" width="19" darkMode={darkMode} isClicked={isClicked}><path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='48' d='M112 184l144 144 144-144'/>
+        </Svg>
       </SelectMenu>
       <Wrapper darkMode={darkMode} isClicked={isClicked}>
         <Option onClick={() => handleSelect('')}>All Regions</Option>

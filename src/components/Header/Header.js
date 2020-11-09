@@ -40,12 +40,16 @@ const Button = styled.div`
   transform: scale(0.95);
   transition: border 0.15s ease-in-out, transform 0.15s ease-in-out;
   :hover {
-    border: 2px solid ${props => props.darkMode ? 'white' : 'hsl(209, 23%, 22%)'};
     cursor: pointer;
-    transform: scale(1);
   }
-  :active {
+  @media only screen and (min-width: 800px) {
+    :hover {
+    border: 2px solid ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
+    transform: scale(1);
+    }
+    :active {
     transform: scale(0.95);
+    }
   }
   @media only screen and (max-width: 400px) {
     font-size: 0.80em;

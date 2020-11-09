@@ -72,8 +72,10 @@ export const App = () => {
   const [page, setPage] = useState('');
 
   const displayDetails = country => {
-    setPage(country);
-    window.scrollTo(0, 0);
+    setTimeout(() => {
+      setPage(country);
+      window.scrollTo(0, 0);
+    }, 150);
   }
 
   // Reset main page when BackButton is clicked on details page:
