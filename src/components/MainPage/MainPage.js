@@ -23,6 +23,7 @@ const Filter = styled.div`
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
+    margin-bottom: 40px;
   }
 `;
 
