@@ -48,8 +48,7 @@ const Paragraph = styled.p`
 
 export const ListItems = ({ country, darkMode, displayDetails }) => {
   return (
-    <Li 
-      value={country.name} 
+    <Li
       darkMode={darkMode} 
       onClick={() => displayDetails(country.name)}
     >
