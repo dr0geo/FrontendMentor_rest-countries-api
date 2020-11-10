@@ -58,6 +58,7 @@ export const SearchInput = ({ darkMode, handleChange }) => {
         />
       </Svg>
       <Input 
+        aria-label="Search country"
         placeholder="Search for a country..."
         darkMode={darkMode}
         onChange={handleChange}
