@@ -5,19 +5,18 @@ const Svg = styled.svg`
   left: 15px;
   position: relative;
   top: 5px;
-  transition: all 0.3s ease-in-out;
   z-index: 1;
 `;
 
 const Input = styled.input`
-  background-color: ${props => props.darkMode ? 'hsl(209, 23%, 22%)' : 'white'};
+  background: ${props => props.darkMode ? 'hsl(209, 23%, 22%)' : 'white'};
   border: 2px solid transparent;
   border-radius: 5px;
   color: ${props => props.darkMode ? 'white' : 'hsl(200, 15%, 8%)'};
   padding: 10px 0px 10px 40px;
   position: relative;
   top: -32px;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.2s ease-in-out;
   width: 100%;
   @media only screen and (min-width: 800px) {
     :hover {

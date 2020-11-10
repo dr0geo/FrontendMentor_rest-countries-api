@@ -4,10 +4,10 @@ import loadIcon from './loading.svg';
 
 const rotation = keyframes`
   0% {
-    rotate: 0deg;
+    transform: rotate(0deg);
   }
   100% {
-    rotate: 360deg;
+    transform: rotate(360deg);
   }
 `;
 

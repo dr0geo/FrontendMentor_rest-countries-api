@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
   max-width: 1200px;
   padding: 0px 40px;
   position: relative;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
   z-index: 1;
   @media only screen and (max-width: 400px) {
     padding: 0px 10px;
@@ -61,7 +61,7 @@ const Svg = styled.svg`
   padding-right: 5px;
   position: relative;
   top: 5px;
-  transition: fill 0.3s ease-in-out, color 0.15s ease-in-out;
+  transition: fill 0.2s ease-in-out;
 `;
 
 export const Header = ({ onClick, darkMode, backToMainPage }) => {

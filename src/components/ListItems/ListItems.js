@@ -4,9 +4,10 @@ import styled from 'styled-components';
 const Li = styled.li`
   background : ${props => props.darkMode ? 'hsl(209, 23%, 22%)' : 'white'};
   border-radius: 5px;
+  box-shadow: ${props => !props.darkMode && '0px 0px 2px 2px lightgray'};
   list-style-type: none;
   padding-bottom: 40px;
-  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
   :hover {
     cursor: pointer;
   }

@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   margin: auto;
   max-width: 1200px;
   padding: 50px 40px;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
   @media only screen and (max-width: 500px) {
     padding: 20px 20px;
   }

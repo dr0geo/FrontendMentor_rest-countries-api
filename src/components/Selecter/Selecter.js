@@ -11,7 +11,7 @@ const SelectMenu = styled.div`
   justify-content: space-between;
   margin-bottom: 5px;
   padding: 10px 15px;
-  transition: background 0.3s ease-in-out, border 0.15s ease-in-out;
+  transition: background 0.3s ease-in-out, border 0.2s ease-in-out, color 0.3s ease-in-out;
   width: 200px;
   :hover {
     cursor: pointer;
@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   background-color: ${props => props.darkMode ? 'hsl(209, 23%, 22%)' : 'white'};
   border-radius: 5px;
   position: absolute;
-  transform: ${props => props.isClicked ? 'scaleY(100%)' : 'scaleY(0%)'};
+  transform: ${props => props.isClicked ? 'scaleY(1)' : 'scaleY(0)'};
   transform-origin: top center;
   transition: background-color 0.3s ease-in-out, transform 0.15s ease-in-out;
   width: 200px;
@@ -49,7 +49,7 @@ const Option = styled.div`
   font-size: 0.9em;
   margin: 4px 0px;
   padding: 3px 15px;
-  transition: all 0.1s ease-in-out;
+  transition: font-size 0.1s ease-in-out;
   :hover {
     cursor: pointer;
   }

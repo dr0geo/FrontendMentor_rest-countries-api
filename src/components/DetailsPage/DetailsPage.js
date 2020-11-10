@@ -9,14 +9,13 @@ const Wrapper = styled.div`
   max-width: 1200px;
   padding: 110px 0px;
   position: relative;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
 `;
 
 const Svg = styled.svg`
   padding-right: 10px;
   position: relative;
   top: 5px;
-  transition: all 0.3s ease-in-out;
 `;
 
 const BackButton = styled.button`
@@ -28,7 +27,7 @@ const BackButton = styled.button`
   margin-left: 40px;
   padding: 5px 40px 10px 40px;
   transform: scale(0.95);
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.15s ease-in-out;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.3s ease-in-out;
   :hover {
     cursor: pointer;
   }
@@ -61,13 +60,20 @@ const FlexRowCont = styled.div`
 const Flag = styled.img`
   box-shadow: ${props => !props.darkMode && '0px 0px 2px 2px lightgray'};
   display: block;
-  flex: 1 1 400px;
+  flex: 1 1 auto;
   margin-left: 40px;
-  transition: all 0.3s ease-in-out;
+  max-width: 600px;
+  transition: box-shadow 0.3s ease-in-out;
+  @media only screen and (max-width: 1200px) {
+    max-width: 400px;
+  }
+  @media only screen and (max-width: 1000px) {
+    max-width: 300px;
+  }
   @media only screen and (max-width: 800px) {
     flex: 1 1 content;
     margin-bottom: 50px;
-    width: 95%;
+    max-width: 95%;
   }
 `;
 

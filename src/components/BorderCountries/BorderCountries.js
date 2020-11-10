@@ -9,7 +9,7 @@ const BorderCountry = styled.em`
   margin: -2px 10px 15px 0px;
   padding: 5px 15px;
   transform: scale(0.95);
-  transition: background 0.3s ease-in-out, transform 0.15s ease-in-out;
+  transition: background 0.3s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.3s ease-in-out;
   :hover {
     cursor: pointer;
   }
